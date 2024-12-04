@@ -1,0 +1,171 @@
+:root {
+    --primary-color: rgb(236, 236, 236);
+    --secondary-color: rgb(21, 21, 21);
+    --blue-color: #2bc5cd;
+    --orange-color: #ff693d;
+    --border: 2px solid var(--blue-color);
+    --spacing: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: auto;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: auto; 
+    gap: 20px;
+}
+
+header {
+    background-color: var(--blue-color);
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    overflow-wrap: break-word;
+    text-align: center;
+    padding: 20px; 
+}
+
+h1 {
+    padding-bottom: 100px;
+}
+
+.school,
+.student,
+.time,
+.alumni {
+    background-size: cover;
+    background-position: center;
+}
+
+.school {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.student {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+main {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    border: var(--border); 
+    border-radius: 15px;
+    padding: 80px;
+}
+
+.time {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.alumni {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+footer {
+    grid-column-start: 2;
+    grid-column-end: 4; 
+    grid-row-start: 3;
+    background-color: var(--orange-color); 
+    padding: 20px;
+}
+
+header h1, footer h3 {
+   color: var(--primary-color); 
+}
+
+main h2{
+    color: --blue-color;
+}
+
+button {
+  padding: 10px; 
+  border: none; 
+  border-radius: 0.25rem; 
+  cursor: pointer; 
+  color: black;
+}
+
+@media (max-width: 767px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto; 
+        height: auto; 
+        gap: 20px;
+        padding: 20px; 
+    }
+
+    header,
+    .school,
+    .student,
+    main,
+    .time,
+    .alumni,
+    footer {
+        grid-column: 1 / 2;
+        width: 100%;
+        margin-bottom: var(--spacing);
+        grid-row: auto; 
+    }
+
+    .school,
+    .student,
+    .time,
+    .alumni {
+        min-height: 250px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    header {
+        grid-row-start: auto;
+        grid-row-end: auto;
+    }
+
+    .school {
+        grid-column-start: 1;
+        grid-row-start: auto;
+    }
+
+    .student {
+        grid-column-start: 1;
+        grid-row-start: auto;
+    }
+
+    main {
+        grid-column-start: 1;
+        grid-row-start: auto;
+    }
+
+    .time {
+        grid-column-start: 1;
+        grid-row-start: auto;
+    }
+
+    .alumni {
+        grid-column-start: 1;
+        grid-row-start: auto;
+    }
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: auto;
+    }
+}
